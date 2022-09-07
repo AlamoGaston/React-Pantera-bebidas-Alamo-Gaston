@@ -28,13 +28,19 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         +
       </Button>{" "}
       <div>
-        <Button
-          variant="outline-success"
-          disabled={stock <= 0}
-          onClick={() => onAdd(count)}
-        >
-          Agregar al carrito
-        </Button>
+        {stock && count ? (
+          <Button
+            variant="danger"
+            disabled={stock <= 0}
+            onClick={() => onAdd(count)}
+          >
+            Agregar al carrito
+          </Button>
+        ) : (
+          <Button variant="outline-info" disabled>
+            Agregar al carrito
+          </Button>
+        )}
         <div>
           <p className="itemDescription">Disponibles: {stock}</p>
         </div>

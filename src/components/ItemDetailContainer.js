@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import ItemCount from "./ItemCount";
+//import ItemCount from "./ItemCount";
 import drinks from "../utils/data";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     const getData = new Promise((resolve) => {
       setTimeout(() => {
         resolve(drinks);
-      }, 500);
+      }, 2000);
     });
     getData.then((res) =>
       setData(res.find((drink) => drink.id === parseInt(id)))
