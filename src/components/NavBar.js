@@ -1,6 +1,6 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -12,11 +12,13 @@ export const NavBar = () => {
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="/">Pantera Bebidas</Navbar.Brand>
+        <Navbar.Brand className="me-auto" href="/">
+          Pantera Bebidas
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-5 my-lg-0"
+            className="mx-auto my-5 my-lg-0 "
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
@@ -26,7 +28,9 @@ export const NavBar = () => {
             <Nav.Link href="/category/Vodka">Vodka</Nav.Link>
             <Nav.Link href="/category/Energizantes">Energizantes</Nav.Link>
           </Nav>
-          <CartWidget />
+          <Link to="/cart" className="me-auto">
+            <CartWidget />
+          </Link>
           <Form className="d-flex">
             <Form.Control
               type="search"

@@ -1,14 +1,14 @@
 let is_ok = true;
 
-let desafio = (task) => {
+let desafio = (time, task) => {
   return new Promise((resolve, reject) => {
-    if (is_ok) {
-      setTimeout(() => {
+    setTimeout(() => {
+      if (is_ok) {
         resolve(task);
-      }, 2000);
-    } else {
-      reject("Error");
-    }
+      } else {
+        reject("Error");
+      }
+    }, time);
   });
 };
 

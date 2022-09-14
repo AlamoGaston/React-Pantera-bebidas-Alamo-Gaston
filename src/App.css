@@ -1,9 +1,10 @@
 .counter {
   width: fit-content;
-  background-color: rgb(233, 219, 237);
+  background-color: rgb(208, 130, 230);
   margin: auto;
   padding: 1rem;
   text-align: center;
+  border-radius: 10%;
 }
 
 .container {
@@ -24,12 +25,48 @@
 }
 
 .content {
-  width: 50%;
+  width: 100%;
 }
 
 .ItemListCon {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+/*--FOOTER--*/
+
+.footer {
+  color: whitesmoke;
+  background-color: rgb(173, 77, 221);
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+.iconos {
+  display: flex;
+  text-align: end;
+  justify-content: space-around;
+}
+
+/*--CART--*/
+.cart__tittle {
+  text-align: center;
+}
+
+.emptyCart {
+  margin: 0px 10px;
 }

@@ -1,39 +1,37 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 
-const ItemCount = ({ initial, stock, onAdd }) => {
-  const [count, setCount] = useState(parseInt(initial));
-
-  const decrement = () => {
-    setCount(count - 1);
-  };
-
-  const increment = () => {
-    setCount(count + 1);
-  };
+const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount(parseInt(initial));
+    setCount(initial);
   }, [initial]);
+
+  const increment = () => {
+    if (count < stock) {
+      setCount(count + 1);
+    }
+  };
+
+  const decrement = () => {
+    if (count > initial) {
+      setCount(count - 1);
+    }
+  };
 
   return (
     <div className="counter">
       <Button variant="danger" onClick={decrement}>
         -
       </Button>{" "}
-      <span className="itemCount">
-        {count > stock ? "No disponible " : count}
-      </span>
+      <span className="itemCount">{count}</span>
       <Button variant="success" onClick={increment}>
         +
       </Button>{" "}
       <div>
         {stock && count ? (
-          <Button
-            variant="danger"
-            disabled={stock <= 0}
-            onClick={() => onAdd(count)}
-          >
+          <Button variant="danger" onClick={() => onAdd(count)}>
             Agregar al carrito
           </Button>
         ) : (
@@ -41,9 +39,6 @@ const ItemCount = ({ initial, stock, onAdd }) => {
             Agregar al carrito
           </Button>
         )}
-        <div>
-          <p className="itemDescription">Disponibles: {stock}</p>
-        </div>
       </div>
     </div>
   );

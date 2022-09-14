@@ -14,7 +14,7 @@ const ItemListContainer = () => {
     const getData = new Promise((resolve) => {
       setTimeout(() => {
         resolve(drinks);
-      }, 2000);
+      }, 500);
     });
     if (drinkId) {
       getData.then((res) =>
