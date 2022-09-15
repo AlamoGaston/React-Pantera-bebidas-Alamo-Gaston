@@ -12,7 +12,7 @@ export const NavBar = () => {
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container fluid>
-        <Navbar.Brand className="me-auto" href="/">
+        <Navbar.Brand className="me-auto" as={Link} to="/">
           Pantera Bebidas
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,11 +22,21 @@ export const NavBar = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/category/sinAlcohol">Sin alcohol</Nav.Link>
-            <Nav.Link href="/category/Cervezas">Cervezas</Nav.Link>
-            <Nav.Link href="/category/Aperitivos">Aperitivos</Nav.Link>
-            <Nav.Link href="/category/Vodka">Vodka</Nav.Link>
-            <Nav.Link href="/category/Energizantes">Energizantes</Nav.Link>
+            <Nav.Link as={Link} to="/category/sinAlcohol">
+              Sin alcohol
+            </Nav.Link>
+            <Nav.Link as={Link} to="/category/Cervezas">
+              Cervezas
+            </Nav.Link>
+            <Nav.Link as={Link} to="/category/Aperitivos">
+              Aperitivos
+            </Nav.Link>
+            <Nav.Link as={Link} to="/category/Vodka">
+              Vodka
+            </Nav.Link>
+            <Nav.Link as={Link} to="/category/Energizantes">
+              Energizantes
+            </Nav.Link>
           </Nav>
           <Link to="/cart" className="me-auto">
             <CartWidget />

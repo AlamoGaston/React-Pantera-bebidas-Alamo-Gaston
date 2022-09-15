@@ -42,9 +42,23 @@ const ItemDetail = ({ data }) => {
                       onAdd={onAdd}
                     />
                   ) : (
-                    <Link to="/cart">
-                      <Button variant="success">Enviar al carrito</Button>
-                    </Link>
+                    <div>
+                      <div>
+                        <Link to="/cart">
+                          <Button variant="success" size="lg">
+                            Ir al carrito
+                          </Button>
+                        </Link>
+                      </div>
+                      <br />
+                      <div>
+                        <Link to="/">
+                          <Button variant="primary" size="lg">
+                            Continuar comprando
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>

@@ -35,11 +35,31 @@ const CartContextProvider = ({ children }) => {
   const isInCart = (id) =>
     cartList.find((data) => data.id === id) ? true : false;
 
-  /*----*/
+  /*--total--*/
+
+  const total = () => {
+    return cartList.reduce(
+      (prev, current) => prev + current.qty * current.price,
+      0
+    );
+  };
+
+  /*--productsCart--*/
+
+  const productsCart = () =>
+    cartList.reduce((accumulated, selection) => accumulated + selection.qty, 0);
 
   return (
     <CartContext.Provider
-      value={{ cartList, addItem, removeItem, clear, isInCart }}
+      value={{
+        cartList,
+        addItem,
+        removeItem,
+        clear,
+        isInCart,
+        total,
+        productsCart,
+      }}
     >
       {children}
     </CartContext.Provider>
