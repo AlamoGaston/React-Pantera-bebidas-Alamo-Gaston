@@ -45,3 +45,5 @@ export const firestoreDetail = async (itemId) => {
     console.log("No existe");
   }
 };
+
+export default db;

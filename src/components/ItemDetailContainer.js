@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     firestoreDetail(itemId).then((res) => setData(res));
-  }, []);
+  }, [itemId]);
 
   return (
     <>

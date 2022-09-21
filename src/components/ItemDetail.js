@@ -9,12 +9,12 @@ import "../App.css";
 
 const ItemDetail = ({ data }) => {
   const [itemCount, setItemCount] = useState(0);
-  const test = useContext(CartContext);
+  const buy = useContext(CartContext);
 
   const onAdd = (qty) => {
     alert(`Agregaste ${qty} productos a tu compra.`);
     setItemCount(qty);
-    test.addItem(data, qty);
+    buy.addItem(data, qty);
   };
 
   return (
