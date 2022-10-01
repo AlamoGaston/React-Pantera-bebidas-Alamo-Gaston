@@ -1,8 +1,6 @@
 import React from "react";
 import Item from "./Item";
 import { Spinner } from "react-bootstrap";
-//import drinks from "../utils/data";
-
 const ItemList = ({ data = [] }) => {
   return (
     <>
@@ -20,7 +18,7 @@ const ItemList = ({ data = [] }) => {
           />
         ))
       ) : (
-        <Spinner animation="border" role="status">
+        <Spinner animation="border" role="status" variant="light">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       )}

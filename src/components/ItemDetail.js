@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import Swal from "sweetalert2";
 import "../App.css";
 
 const ItemDetail = ({ data }) => {
@@ -12,7 +13,7 @@ const ItemDetail = ({ data }) => {
   const buy = useContext(CartContext);
 
   const onAdd = (qty) => {
-    alert(`Agregaste ${qty} productos a tu compra.`);
+    Swal.fire(`Agregaste ${qty} productos a tu compra`, "Continuar", "success");
     setItemCount(qty);
     buy.addItem(data, qty);
   };
@@ -20,7 +21,7 @@ const ItemDetail = ({ data }) => {
   return (
     <>
       {data && data.image ? (
-        <div className="container">
+        <div className="container1">
           <div className="row">
             <div className="detail">
               <div className="col">
@@ -66,7 +67,7 @@ const ItemDetail = ({ data }) => {
           </div>
         </div>
       ) : (
-        <Spinner animation="border" role="status">
+        <Spinner animation="border" role="status" variant="light">
           <span className="visually-hidden">Loading...</span>{" "}
         </Spinner>
       )}

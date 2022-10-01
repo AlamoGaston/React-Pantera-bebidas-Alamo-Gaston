@@ -24,8 +24,9 @@ const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
     <div className="counter">
       <Button variant="danger" onClick={decrement}>
         -
-      </Button>{" "}
-      <span className="itemCount">{count}</span>
+      </Button>
+      {"  "}
+      <span className="itemCount"> {count} </span>
       <Button variant="success" onClick={increment}>
         +
       </Button>{" "}

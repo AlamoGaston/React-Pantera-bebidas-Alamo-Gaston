@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-//import drinks from "../utils/data";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";

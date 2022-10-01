@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 
 function Item({ info }) {
   return (
-    <Card style={{ width: "20rem" }}>
+    <Card style={{ width: "20rem" }} className="list">
       <Card.Img variant="top" src={info.image} />
       <Card.Body>
         <Card.Title>{info.name}</Card.Title>
         <Card.Text>${info.price}</Card.Text>
-        {/* <ItemCount stock={info.stock} initial={0} onAdd={onAdd} /> */}
         <Link to={`/detail/${info.id}`}>
           <Button variant="primary">Detalles</Button>
         </Link>

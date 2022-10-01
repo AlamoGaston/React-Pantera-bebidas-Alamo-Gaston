@@ -12,11 +12,11 @@ import {
   serverTimestamp,
   increment,
 } from "firebase/firestore";
+import Swal from "sweetalert2";
 import db from "../utils/firebaseConfig";
 
 const Cart = () => {
   const buy = useContext(CartContext);
-  // console.log(buy);
 
   const createOrder = () => {
     let itemsForDB = buy.cartList.map((item) => ({
@@ -44,12 +44,15 @@ const Cart = () => {
     };
     createOrderInFirebasetore()
       .then((res) => {
-        alert("Tu order fue creada" + res.id);
+        Swal.fire(
+          `Tu order fue creada`,
+          "Tu codigo de compra es: " + res.id,
+          "success"
+        );
         buy.cartList.forEach(async (item) => {
           const itemRef = doc(db, "drinks", item.id);
 
           await updateDoc(itemRef, {
-            // stock: stock - item.qty
             stock: increment(-item.qty),
           });
         });
@@ -57,14 +60,14 @@ const Cart = () => {
       })
       .catch((err) => console.log(err));
   };
-  // let order = createOrder()
 
   useEffect(() => {});
 
   return (
     <>
-      <div className="container">
+      <div className="container2">
         <h1 className="cart__tittle">Tu Compra</h1>
+        <br />
         <div className="row">
           <div className="col col1">
             <div>
@@ -94,6 +97,7 @@ const Cart = () => {
                   <Button
                     variant="danger"
                     onClick={() => buy.removeItem(item.id)}
+                    size="sm"
                   >
                     X
                   </Button>
