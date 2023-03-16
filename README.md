@@ -2,7 +2,7 @@
 
 _Este proyecto es un e-commerce ficticio de venta de bebidas echo con React para el curso de CoderHouse_
 
-[![Alt text](https://img.youtube.com/vi/TWjjp0QPiOM/0.jpg)](https://youtu.be/BqncMO6llfo)
+[![Alt text](https://img.youtube.com/vi/BqncMO6llfo/0.jpg)](https://youtu.be/BqncMO6llfo)
 
 ## Instalacion
 
